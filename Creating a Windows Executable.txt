@@ -1,0 +1,22 @@
+Creating a Windows Executable
+Once you have packed your game into a .love file you can create a game executable that directly runs your game.
+
+For this you have to append your .love file to the love.exe file that comes with the official LÖVE .zip file. The resulting file is your game executable.
+
+Once you have your game executable you can pack it together with all the other DLL files of the official LÖVE .zip file into a new .zip file and share this with the world.
+
+Note: Some people do not have a 64-bit version of Windows, so it is a good idea to either distribute both 32- and 64-bit versions of your game, or only distribute a 32-bit version.
+
+Platform Specific Instructions
+Windows
+To create your game executable under windows use the command line to run
+
+   copy /b love.exe+SuperGame.love SuperGame.exe
+Note: You may have to run the command as an administrator on your computer. You can do this by going to Windows\System32 and right clicking on cmd.exe and selecting the option Run as administrator. After this, you must type cd C:\Program Files\LOVE\ (or whatever your default love directory is), then you may continue as normal.
+
+Alternatively you can create a .bat (e.g. create_game_exe.bat) file with the contents
+
+   copy /b love.exe+%1 "%~n1.exe"
+and then you can simply drag your SuperGame.love file onto the .bat file and it will create the file SuperGame.love.exe which you could then use for distribution.
+
+This method creates a fused game.
